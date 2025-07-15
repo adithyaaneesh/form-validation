@@ -5,17 +5,27 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
-    const password1 = document.getElementById("password1").value;
-    const password2 = document.getElementById("password2").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (!name || !email || !password1 || !password2) {
-      alert("Please fill all the blanks");
+    if (!name || !email || !password || !confirmPassword) {
+      document.getElementsByTagName('form') = "Please fill all the blanks"
       return;
     }
-    if (password1 !== password2) {
-      alert("password do not match");
+    if (name.length>10){
+      document.getElementById('user').innerHTML = "invalid name"
       return;
     }
+    let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$f/;
+    if (regex.test(email)) {
+      document.getElementById('mail').innerHTML = "invalid mail address"
+      return;
+    }
+    if (password !== confirmPassword) {
+      document.getElementById('demo').innerHTML = "Password do not match"
+      return;
+    }
+
     alert("Registration Successfull");
     form.reset();
   });
