@@ -29,23 +29,12 @@ form {
   display: grid;
   padding: 20px 20px 20px 20px;
 }
-#name {
+.nameError {
+  color: red;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#email {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#password {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#confirmPassword {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#submit {
+button {
   margin-top: 30px;
 }
 button:hover {
@@ -59,13 +48,4 @@ button {
 input {
   padding-top: 10px;
   padding-bottom: 10px;
-}
-#demo {
-  color: red;
-}
-#mail {
-  color: red;
-}
-#user {
-    color: red;
 }
