@@ -7,15 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
+    
 
     if (!name || !email || !password ) {
-      document.getElementById("errorText").innerHTML = "Please fill all the blanks*"
+      document.getElementById("errorText").innerHTML = "Please fill all the blanks*";
       document.getElementById("errorText").style.color = "red";
       return;
-    }
 
-    if (name.length>10){
-      document.getElementById('user').innerHTML = "invalid name"
+    }
+    let len = document.getElementById("name").value.length;
+    if (len < 3 || len > 20){
+      document.getElementById('user').innerHTML = "Name must between 3 - 20 characters long ";
       return;
     }
     let regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; 
@@ -25,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
     if (password.length<6){
-      document.getElementById('psw').innerHTML = "Password must be more than 6 character"
+      document.getElementById('psw').innerHTML = "Password must be more than 6 character";
       return;
     }
     if (password !== confirmPassword) {
-      document.getElementById('demo').innerHTML = "Password do not match"
+      document.getElementById('demo').innerHTML = "Password do not match";
       return;
     }
     
