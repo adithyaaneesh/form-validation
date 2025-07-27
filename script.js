@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('mail').innerHTML = "Please enter valid email address";
       return;
     }
-
+    if (password.length<6){
+      document.getElementById('psw').innerHTML = "Password must be more than 6 character"
+      return;
+    }
     if (password !== confirmPassword) {
       document.getElementById('demo').innerHTML = "Password do not match"
       return;
     }
-    if (password.length<6){
-      document.getElementById('demo').innerHTML = "Password must be more than 6 character"
-      return;
-    }
+    
 
     alert("Registration Successfull");
     form.reset();
