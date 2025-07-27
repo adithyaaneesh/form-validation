@@ -18,12 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('user').innerHTML = "invalid name"
       return;
     }
+    let regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; 
 
-    // let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$f/;
-    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-
-    if (regex.test(email)) {
-      document.getElementById('mail').innerHTML = "invalid mail address"
+    if (!regex.test(email)) {
+      document.getElementById('mail').innerHTML = "Please enter valid email address";
       return;
     }
 
